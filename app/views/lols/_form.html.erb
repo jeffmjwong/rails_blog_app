@@ -1,0 +1,22 @@
+<%= form_with(model: lol, local: true) do |form| %>
+  <% if lol.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lol.errors.count, "error") %> prohibited this lol from being saved:</h2>
+
+      <ul>
+      <% lol.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :medium %>
+    <%= form.text_field :medium, id: :lol_medium %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
