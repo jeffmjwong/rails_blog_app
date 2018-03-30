@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :lols
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :pages
   root to: 'posts#index'
   # get '/pages', to: 'pages#index'

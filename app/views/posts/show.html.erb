@@ -12,12 +12,8 @@
 
 <div id="comments">
   <h1>Comments:</h1>
-  <% @post.comments.each do |comment| %>
-    <div>
-      <strong><%= comment.name %> says:</strong>
-      <%= comment.content %>
-    </div>
-  <% end %>
+    <%= render partial: "comments/comment", collection: @post.comments, as: :comment %>
+    <!-- ABOVE SAME AS <%= render @post.comments %> -->
 </div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
