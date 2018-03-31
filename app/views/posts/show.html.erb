@@ -12,8 +12,10 @@
 
 <div id="comments">
   <h1>Comments:</h1>
-    <%= render partial: "comments/comment", collection: @post.comments, as: :comment %>
-    <!-- ABOVE SAME AS <%= render @post.comments %> -->
+  <%= render partial: "comments/comment", collection: @post.comments, as: :comment %>
+  <!-- ABOVE SAME AS <%= render @post.comments %> -->
+  <h2>Add a Comment</h2>
+  <%= render partial: "comments/form", locals: { comment: @post.comments.new } %>
 </div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
